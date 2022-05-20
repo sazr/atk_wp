@@ -4,10 +4,6 @@
 	padding-top: initial;
 }
 
-.atk_wp .ui.button {
-	margin-bottom: 10px;
-}
-
 .atk_wp .ui.card, 
 .atk_wp .ui.cards > .card {
 	width: calc(33.333% - 1rem);

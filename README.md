@@ -36,7 +36,7 @@ class Page_Example {
 
 		$right = \Atk4\Ui\Panel\Right::addTo($layout, ['dynamic' => []]);
 		$msg = \Atk4\Ui\Message::addTo($right,['Other']);
-		$btn = \Atk4\Ui\Button::addTo($layout, ['Open Static']);
+		$btn = \Atk4\Ui\Button::addTo($layout, ['Show Submenu']);
 		$btn->js(true)->data('btn', '2');
 		$btn->on('click', $right->jsOpen([], ['btn'], 'orange'));
 
@@ -50,7 +50,7 @@ class Page_Example {
 		    return 'New seleced item id: ' . $itemId;
 		});
 
-		$btn = \Atk4\Ui\Button::addTo($layout)->set('Minimal');
+		$btn = \Atk4\Ui\Button::addTo($layout)->set('Show Toast');
 		$btn->on('click', new \Atk4\Ui\JsToast('Hi there!'));
 	}
 }
@@ -61,14 +61,14 @@ new \atk_wp\Page_Example('Page_Example');
 ```
 
 
-Once you've activated the plugin you can then code pages and instantiate them anywhere. For example in your theme's `functions.php` you can simple place this and it will create the page.
+Once you've activated the plugin you can then code pages and instantiate them anywhere. For example in your theme's `functions.php` you can place this and it will create the page.
 
 ```
-require_once( get_template_directory() . '/your_pages/your_page.php' );
+require_once( get_template_directory() . '/pages/your_page.php' );
 new Your_Page('your_page_name');
 ```
 
-And `/your_pages/your_page.php` could be something like:
+And `/pages/your_page.php` could be something like:
 
 ```
 class Your_Page {
