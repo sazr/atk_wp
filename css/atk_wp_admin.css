@@ -1,0 +1,73 @@
+
+
+.atk_wp .ui.menu {
+	padding-top: initial;
+}
+
+.atk_wp .ui.button {
+	margin-bottom: 10px;
+}
+
+.atk_wp .ui.card, 
+.atk_wp .ui.cards > .card {
+	width: calc(33.333% - 1rem);
+}
+
+/* Everything above mobile portrait dimensions */
+@media (min-width: 961px) {
+	.atk_wp #wpcontent {
+		padding: 15px;
+	}
+
+	.atk_wp #atk-wp-side-panel-cnt .atk-right-panel.atk-visible {
+		top: 32px;
+		height: calc(100% - 32px);
+	}
+
+	.atk_wp #atk-wp-modal-cnt,
+	.atk_wp .ui.modals.dimmer {
+		left: 160px !important;
+		width: calc(100% - 160px);
+		padding-right: 2rem;
+	}
+
+	.atk_wp .ui.toast-container.top.right {
+		top: 44px;
+	}
+
+}
+
+/* Mobile Styling */
+@media (max-width: 960px) {
+	.atk_wp #wpcontent {
+		padding: 0px;
+	}
+
+	.atk_wp .ui.button {
+		margin-bottom: 15px;
+	}
+
+	.atk_wp .ui.toast-container.top.right {
+		top: 53px;
+	}
+
+	.atk_wp #atk-wp-side-panel-cnt .atk-right-panel.atk-visible {
+		top: 46px;
+		height: calc(100% - 46px);
+	}
+
+	.atk_wp .ui.card, 
+	.atk_wp .ui.cards > .card {
+		width: calc(50% - 1rem);
+	}
+}
+
+
+/* Mobile Styling */
+@media (max-width: 580px) {
+
+	.atk_wp .ui.card, 
+	.atk_wp .ui.cards > .card {
+		width: calc(100% - 1rem);
+	}
+}

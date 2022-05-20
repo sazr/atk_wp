@@ -1,0 +1,15 @@
+{
+  "description": "ATK WordPress",
+  "require": {
+    "atk4/ui": "^3.1.0"
+  },
+  "config": {
+    "autoloader-suffix": "atk_wp",
+    "prepend-autoloader": false
+  },
+  "autoload": {
+    "psr-4": {
+      "atk_wp\\" : "src/"
+    }
+  }
+}
