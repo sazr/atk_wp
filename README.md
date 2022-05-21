@@ -73,7 +73,7 @@ new \atk_wp\Page_Example('Page_Example');
 
 Once you've activated the plugin you can then code pages and instantiate them anywhere. For example in your theme's `functions.php` you can place this and it will create the page.
 
-```
+```php
 require_once( get_template_directory() . '/pages/your_page.php' );
 new Your_Page('your_page_name');
 ```
