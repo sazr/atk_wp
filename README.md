@@ -13,7 +13,7 @@
 
 ### Add a new page that uses ATK
 
-```
+```php
 
 class Page_Example {
 
@@ -80,7 +80,7 @@ new Your_Page('your_page_name');
 
 And `/pages/your_page.php` could be something like:
 
-```
+```php
 class Your_Page {
 
 	use \atk_wp\Page;
@@ -134,7 +134,6 @@ See [here](https://github.com/atk4/ui#bundled-and-planned-components) for the fu
 | ProgressBar | Interactive display of a multi-step PHP code execution progress | 1.4 |
 | Console | Execute server/shell commands and display progress live | 1.4 |
 | Items and Lists | Flexible and high-performance way to display lists of items. | 1.4 |
-| Wizard | Multi-step, wizard with temporary data storing. | 1.4  |
 | Actions | Vizualization of user-defined actions | 2.0 |
 
 
