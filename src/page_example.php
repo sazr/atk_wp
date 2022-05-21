@@ -2,30 +2,6 @@
 
 namespace atk_wp;
 
-class ATKWP_Comment extends \Atk4\Data\Model {
-	public $table = 'test';
-
-	protected function init() : void {
-		parent::init();
-
-		$this->addField( 'comment_ID' );
-		$this->addField( 'comment_post_ID' );
-		$this->addField( 'comment_author' );
-		$this->addField( 'comment_author_email' );
-		$this->addField( 'comment_author_url' );
-		$this->addField( 'comment_author_IP' );
-		$this->addField( 'comment_date' );
-		$this->addField( 'comment_date_gmt' );
-		$this->addField( 'comment_content' );
-		$this->addField( 'comment_karma' );
-		$this->addField( 'comment_approved' );
-		$this->addField( 'comment_agent' );
-		$this->addField( 'comment_type' );
-		$this->addField( 'comment_parent' );
-		$this->addField( 'user_id' );
-	}
-}
-
 class Page_Example {
 
 	use Page;
@@ -71,9 +47,8 @@ class Page_Example {
 		$msg   = \Atk4\Ui\Message::addTo( $right, array( 'Other' ) );
 
 		$menu = \Atk4\Ui\Menu::addTo( $layout );
-		$menu->addItem( 'foo', 'foo.php' );
-		$menu->addItem( 'bar' );
-		$menu->addItem( 'baz' );
+		$menu->addItem( 'Dashboard' );
+		$menu->addItem( 'Some link' );
 
 		$dropdown = \Atk4\Ui\Dropdown::addTo(
 			$menu,
@@ -96,22 +71,11 @@ class Page_Example {
 		$btn = \Atk4\Ui\Button::addTo( $menu )->set( 'Show Toast' );
 		$btn->on( 'click', new \Atk4\Ui\JsToast( 'Hi there!' ) );
 
-		$app->getExecutorFactory()->registerTrigger(
-			$app->getExecutorFactory()::CARD_BUTTON,
-			array(
-				Button::class,
-				null,
-				'blue',
-				'icon' => 'plane',
-			),
-			null
-		);
-		\Atk4\Ui\CardDeck::addTo( $layout )->setSource(
+		\Atk4\Ui\CardDeck::addTo( $layout, [ 'search' => false, 'noRecordScopeActions' => [], 'singleScopeActions' => [] ] )->setSource(
 			$page_data['comments'],
 			array(
 				'comment_author_email',
 				'comment_date',
-				'comment_content',
 			)
 		);
 
@@ -119,24 +83,11 @@ class Page_Example {
 		\Atk4\Ui\Message::addTo( $tabs->addTab( 'Intro' ), array( 'Other tabs are loaded dynamically!' ) );
 
 		$tabs->addTab(
-			'Users',
+			'Dynamic Tab',
 			function ( \Atk4\Ui\VirtualPage $p ) {
-				// this tab is loaded dynamically, but also contains dynamic component
-				\Atk4\Ui\Message::addTo( $p, array( 'fdfddffd' ) );
-
-				// \Atk4\Ui\Crud::addTo($p)->setModel(new User($app->db));
+				\Atk4\Ui\Message::addTo( $p, array( 'This is dynamic content' ) );
 			}
 		);
-
-		// $tabs->addTab('Settings', function (\Atk4\Ui\VirtualPage $p) use ($app) {
-		// second tab contains an AJAX form that stores itself back to DB
-
-		// $m = new User($app->db);
-		// $m = $m->tryLoadAny();
-		// \Atk4\Ui\Form::addTo($p)->setModel($m);
-		// });
-
-		// $msg = \Atk4\Ui\Message::addTo($layout,['Other']);
 	}
 }
 
