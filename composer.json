@@ -1,7 +1,7 @@
 {
   "description": "ATK WordPress",
   "require": {
-    "atk4/ui": "^3.1.0"
+    "atk4/ui": "~3.1"
   },
   "config": {
     "autoloader-suffix": "atk_wp",
